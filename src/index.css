@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* this container is defined just for the viewing experience */
+.app_container {
+  min-width: 200;
+  max-width: max-content;
+}

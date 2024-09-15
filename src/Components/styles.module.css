@@ -1,0 +1,26 @@
+.option_label {
+    padding-left: 10px;
+}
+
+.filter_container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-bottom: 1px #EBEBEB solid;
+}
+
+.search_icon {
+    position: absolute;
+    left: 10px;
+    color: #333333;
+}
+
+.filter_input {
+    width: 100%;
+    padding: 8px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: none;
+}
