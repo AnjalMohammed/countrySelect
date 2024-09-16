@@ -1,0 +1,11 @@
+
+/* this container is defined just for the viewing experience */
+.app_container {
+    min-width: 200px;
+    max-width: max-content;
+    margin: 15px;
+  }
+  
+  .div_gap{
+    margin: 10px 0;
+  }

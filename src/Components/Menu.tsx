@@ -1,13 +1,7 @@
-import {
-  components,
-  GroupBase,
-  InputActionMeta,
-  MenuListProps,
-} from "react-select";
+import { components, GroupBase, MenuListProps } from "react-select";
 import { ListOption } from "../data/interfaces";
-import { useEffect, useRef, useState } from "react";
 import { Filter } from "./Filter";
-import { useDataContext } from "../data/context";
+import { useEffect, useRef } from "react";
 
 export function MenuList(
   props: MenuListProps<ListOption, false, GroupBase<ListOption>>

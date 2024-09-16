@@ -1,3 +1,6 @@
+import { RefObject } from "react";
+import { SingleValue } from "react-select";
+
 export interface ListOption {
   readonly value: string;
   readonly label: string;
@@ -11,4 +14,17 @@ export interface ContextType {
   loading: boolean;
   filterText: string | undefined;
   setFilterText: (text: string) => void;
+  inputRef: RefObject<HTMLInputElement>;
+}
+
+export interface CountrySelectProps {
+  className?: string;
+  country?: string;
+  onChange: (country: SingleValue<ListOption>) => void;
+}
+
+export interface CustomDropdownProps {
+  items: ListOption[];
+  initialValue?: string;
+  classNames?: string;
 }
