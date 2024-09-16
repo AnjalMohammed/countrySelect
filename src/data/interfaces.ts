@@ -27,4 +27,11 @@ export interface CustomDropdownProps {
   items: ListOption[];
   initialValue?: string;
   classNames?: string;
+  onChange: (country: SingleValue<ListOption>) => void;
+}
+
+export interface ItemProps {
+  item: ListOption;
+  selection?: ListOption;
+  handleItemClick: (value: ListOption) => void;
 }

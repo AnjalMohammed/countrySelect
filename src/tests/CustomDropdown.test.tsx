@@ -23,10 +23,13 @@ const mockItems: ListOption[] = [
 
 ];
 
+const mockOnChange = jest.fn();
+
 const mockProps = {
   items: mockItems,
   initialValue: "us",
   classNames: "custom-dropdown",
+  onChange: mockOnChange,
 };
 
 describe("Dropdown Component", () => {
@@ -73,6 +76,25 @@ describe("Dropdown Component", () => {
 
     // Check that the button now shows 'Canada'
     expect(button).toHaveTextContent("Canada");
+  });
+
+  it("calls onChange with the selected item when an item is clicked", () => {
+    render(<Dropdown {...mockProps} />);
+
+    const button = screen.getByRole("button");
+
+    // Open the dropdown
+    fireEvent.click(button);
+
+    // Select 'Canada'
+    fireEvent.click(screen.getByText("Canada"));
+
+    // Check that onChange was called with the correct argument
+    expect(mockOnChange).toHaveBeenCalledWith({
+      value: "ca",
+      label: "Canada",
+      color: ""
+    });
   });
 
   it("renders 'No items found' when no items match filter", () => {

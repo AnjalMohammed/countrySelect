@@ -1,10 +1,17 @@
-import React, { createContext, useContext, useState, useEffect, useRef } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useRef,
+  ReactNode,
+} from "react";
 import { fetchCountryData } from "./api/countries";
 import { ContextType, ListOption } from "./interfaces";
 
 const DataContext = createContext<ContextType | undefined>(undefined);
 
-export function DataProvider({ children }: { children: React.ReactNode }) {
+export function DataProvider({ children }: { children: ReactNode }) {
   const [data, setData] = useState<ListOption[] | undefined>();
   const [loading, setLoading] = useState<boolean>(true);
   const [filterText, setFilterText] = useState<string>();

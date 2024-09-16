@@ -13,6 +13,7 @@ export function Dropdown({
   items,
   initialValue,
   classNames,
+  onChange
 }: CustomDropdownProps) {
   const { filterText } = useDataContext();
 
@@ -27,6 +28,7 @@ export function Dropdown({
 
   const handleItemClick = (selection: ListOption) => {
     setSelection(selection);
+    onChange(selection);
     setIsOpen(false);
   };
 

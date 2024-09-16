@@ -1,17 +1,7 @@
-import { ListOption } from "../../data/interfaces";
+import { ItemProps } from "../../data/interfaces";
 import styles from "../styles.module.css";
 
-interface ItemProps {
-  item: ListOption;
-  selection?: ListOption;
-  handleItemClick: (value: ListOption) => void;
-}
-
-export const Item: React.FC<ItemProps> = ({
-  item,
-  selection,
-  handleItemClick,
-}) => {
+export function Item({ item, selection, handleItemClick }: ItemProps) {
   return (
     <div
       key={item.value}
@@ -30,4 +20,4 @@ export const Item: React.FC<ItemProps> = ({
       <span className={styles.option_label}>{item.label}</span>
     </div>
   );
-};
+}
